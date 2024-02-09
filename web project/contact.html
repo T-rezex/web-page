@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="csspro.css">
+    <title>Mohammed page</title>
+    <script src="webJS.js"></script>
+</head>
+
+<header id="scroll">
+    <h2>Mohammed </h2>
+    <nav>
+        <ul>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+
+    <section class="main">
+        <h2 id="Information-h2">Contact Information</h2>
+        <p>Email: s444003999@st.uqu.edu.sa</p>
+        <p>Phone: +966535175715</p>
+
+
+
+        <h2 id="Information-h2">My Location</h2> 
+
+        <iframe id="map" width="1000" height="500" style="border:5;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+    
+    <footer id="footer">
+        <p>&copy; 2024 Mohammed Page. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function initMap() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var lat = position.coords.latitude;
+                    var lng = position.coords.longitude;
+                    var mapUrl = "https://maps.google.com/maps?q=" + lat + "," + lng + "&output=embed";
+                    document.getElementById('map').src = mapUrl;
+                });
+            } else {
+                document.getElementById('map').src = "error.html"; 
+            }
+        }
+        initMap();
+    </script>
+</body>
+
+</html>
